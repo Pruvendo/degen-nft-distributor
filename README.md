@@ -1,0 +1,2 @@
+# degen-nft-distributor
+
