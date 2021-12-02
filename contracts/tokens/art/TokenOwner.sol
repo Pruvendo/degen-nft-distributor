@@ -27,7 +27,8 @@ contract TokenOwner {
         acceptOwner
     {
         ArtRoot(root).create{
-            value: value
+            value: value,
+            callback: TokenOwner.onCreateToken
         }({
             owner: address(this),
             manager: address(1),
@@ -36,6 +37,11 @@ contract TokenOwner {
             creatorFees: 0,
             uniqueVector: uniqueVector
         });
+    }
+
+    address public __token;
+    function onCreateToken(address token) public {
+        __token = token;
     }
 
     function addHash(address token, uint256 hash) external pure acceptOwner {

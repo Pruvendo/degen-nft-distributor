@@ -17,6 +17,7 @@ class ArtRootContract(BasicContract):
         name,
         symbol,
         token_code,
+        traits_config,
     ) -> None:
         return await super().deploy(args=dict(
             manager=manager,
@@ -25,6 +26,7 @@ class ArtRootContract(BasicContract):
             name=name,
             symbol=symbol,
             tokenCode=token_code,
+            traitsConfig_=traits_config,
         ))
 
     async def address(self):
@@ -35,4 +37,5 @@ class ArtRootContract(BasicContract):
             name='',
             symbol='',
             tokenCode='',
+            traitsConfig_=[],
         ))

@@ -16,7 +16,7 @@ contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdr
      * traitsConfig ... Number of options for each particular trait
      */
     uint256 static dataHash;
-    uint[] static traitsConfig;
+    uint[] traitsConfig;
 
 
 
@@ -34,13 +34,16 @@ contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdr
         uint128 creationFee,
         string  name,
         string  symbol,
-        TvmCell tokenCode
+        TvmCell tokenCode,
+        uint[] traitsConfig_
     )
         public
         Root(name, symbol, tokenCode)
         RootManaged(manager)
         RootManagedCreationFee(creationMinValue, creationFee)
-    {}
+    {
+        traitsConfig = traitsConfig_;
+    }
 
 
 
@@ -69,6 +72,7 @@ contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdr
     )
         override
         external
+        responsible
         returns(
             address addr
         )

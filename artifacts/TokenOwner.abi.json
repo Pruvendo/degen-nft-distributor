@@ -20,6 +20,14 @@
 			]
 		},
 		{
+			"name": "onCreateToken",
+			"inputs": [
+				{"name":"token","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "addHash",
 			"inputs": [
 				{"name":"token","type":"address"},
@@ -43,6 +51,14 @@
 			],
 			"outputs": [
 				{"name":"x","type":"uint256"}
+			]
+		},
+		{
+			"name": "__token",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"__token","type":"address"}
 			]
 		}
 	],

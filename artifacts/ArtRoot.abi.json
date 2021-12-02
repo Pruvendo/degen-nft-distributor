@@ -10,7 +10,8 @@
 				{"name":"creationFee","type":"uint128"},
 				{"name":"name","type":"bytes"},
 				{"name":"symbol","type":"bytes"},
-				{"name":"tokenCode","type":"cell"}
+				{"name":"tokenCode","type":"cell"},
+				{"name":"traitsConfig_","type":"uint256[]"}
 			],
 			"outputs": [
 			]
@@ -18,6 +19,7 @@
 		{
 			"name": "create",
 			"inputs": [
+				{"name":"_answer_id","type":"uint32"},
 				{"name":"owner","type":"address"},
 				{"name":"manager","type":"address"},
 				{"name":"managerUnlockTime","type":"uint32"},
@@ -144,8 +146,7 @@
 		}
 	],
 	"data": [
-		{"key":1,"name":"dataHash","type":"uint256"},
-		{"key":2,"name":"traitsConfig","type":"uint256[]"}
+		{"key":1,"name":"dataHash","type":"uint256"}
 	],
 	"events": [
 	]

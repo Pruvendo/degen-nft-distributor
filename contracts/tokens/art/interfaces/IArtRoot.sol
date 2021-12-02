@@ -22,6 +22,7 @@ interface IArtRoot {
         uint[] uniqueVector
     )
         external
+        responsible
         returns(
             address addr
         );
