@@ -149,5 +149,14 @@
 		{"key":1,"name":"dataHash","type":"uint256"}
 	],
 	"events": [
+		{
+			"name": "TokenCreated",
+			"inputs": [
+				{"name":"id","type":"uint256"},
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		}
 	]
 }

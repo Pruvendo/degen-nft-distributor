@@ -1,4 +1,5 @@
 import asyncio
+import json
 import os
 import sys
 
@@ -66,6 +67,13 @@ async def main():
         10 ** 9,
         [0, 1],
     )
+    # print(art_root_contract._keypair.public)
+    # print(await art_root_contract.address())
+    with open('config.json', 'w') as f:
+        json.dump({
+            'root_pubkey': art_root_contract._keypair.public,
+            'root_address': await art_root_contract.address(),
+        }, f)
     # await token_owner_contract_1.add_hash(token_address, 0)
 
 

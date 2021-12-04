@@ -46,6 +46,8 @@ contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdr
     }
 
 
+    event TokenCreated(uint256 id, address addr);
+
 
     /************
      * EXTERNAL *
@@ -80,15 +82,17 @@ contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdr
         require(_isCorrectVector(uniqueVector));
         uint128 fee = (msg.pubkey() == tvm.pubkey()) ? 0 : _creationFee;
         uint128 value = msg.value - fee;
+        uint256 id = _vectorToId(uniqueVector);
         addr = new ArtToken{
             code: _tokenCode,
             value: value,
             pubkey: tvm.pubkey(),
             varInit: {
                 _root: address(this),
-                _id: _vectorToId(uniqueVector)
+                _id: id
             }
         }(owner, manager, managerUnlockTime, creator, creatorFees, dataHash);
+        emit TokenCreated(id, addr);
     }
 
     function _isCorrectVector(uint[] xs) inline internal view returns (bool) {
