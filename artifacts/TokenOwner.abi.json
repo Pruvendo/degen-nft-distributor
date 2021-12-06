@@ -1,0 +1,69 @@
+{
+	"ABI version": 2,
+	"header": ["time"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "create",
+			"inputs": [
+				{"name":"root","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"uniqueVector","type":"uint256[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onCreateToken",
+			"inputs": [
+				{"name":"token","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addHash",
+			"inputs": [
+				{"name":"token","type":"address"},
+				{"name":"hash","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeOwner",
+			"inputs": [
+				{"name":"token","type":"address"},
+				{"name":"owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getZero",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"x","type":"uint256"}
+			]
+		},
+		{
+			"name": "__token",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"__token","type":"address"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	]
+}
