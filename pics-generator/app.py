@@ -15,7 +15,7 @@ with open(json_file, 'r') as file:
 
 async def create_app():
     app = web.Application()
-    aiohttp_jinja2.setup(app, loader = jinja2.PackageLoader('templates'))
+    aiohttp_jinja2.setup(app, loader = jinja2.PackageLoader('folder', 'templates'))
     setup_routes(app)
     return app
 
@@ -24,12 +24,11 @@ async def index(request):
     return {"pictures": pictures}
 
 def setup_routes(app):
-    app.router.add_route('Get', '/', index)
+    app.router.add_route('GET', '/', index)
 
 app = create_app()
 
 if __name__ == '__main__':
-    
     aiohttp.web.run_app(app)
 
 
