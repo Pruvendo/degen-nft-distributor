@@ -3,7 +3,6 @@ import aiohttp_jinja2
 from aiohttp import web
 import aiohttp
 from aiohttp_jinja2 import template
-from attr import dataclass
 import jinja2
 import json
 
@@ -54,12 +53,3 @@ app = create_app()
 
 if __name__ == '__main__':
     aiohttp.web.run_app(app)
-
-
-'''def parse_json(json_file):
-    with open(json_file, 'r') as file:
-        content = file.read()
-        picture_info = json.loads(content)
-        for picture in picture_info:
-            temp = picture["name"]
-            source = picture["images"]'''

@@ -34,6 +34,7 @@ class BasicContract(ABC):
         keypair: KeyPair = None,
         client: TonClient = None,
         subscribe_event_messages = True,
+        static_variables = None,
         **kwargs,
     ) -> None:
         if not client:
@@ -46,7 +47,10 @@ class BasicContract(ABC):
         with open(os.path.join(base_dir, f'{name}.tvc'), 'rb') as file:
             self._tvc = base64.b64encode(file.read()).decode()
 
-        self._deploy_set = DeploySet(tvc=self._tvc)
+        self._deploy_set = DeploySet(
+            tvc=self._tvc,
+            initial_data=static_variables,
+        )
         self._client = client
         if subscribe_event_messages:
             await self._subscribe_account('boc')

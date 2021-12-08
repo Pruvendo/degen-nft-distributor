@@ -22,21 +22,29 @@ async def main():
     )
 
     # send tons
+    print('send tons')
     await send_tons_with_multisig(
         await token_owner_contract_1.address(),
-        10 ** 11,
-        os.path.join(os.path.dirname(__file__), '../artifacts')
+        10 ** 10,
+        os.path.join(os.path.dirname(__file__), '../artifacts'),
+        file_name='devnet',
     )
 
     # deploy
+    print('deploy')
     await token_owner_contract_1.deploy()
 
     # usage
+    print('create')
     await token_owner_contract_1._create(
         ART_ROOT_ADDRESS,
         10 ** 9,
-        [1, 1],
+        [0, 0],
     )
+
+    print('pubkey', token_owner_contract_1._keypair.public)
+    print('secret', token_owner_contract_1._keypair.secret)
+    print('adress', await token_owner_contract_1.address())
 
 
 if __name__ == '__main__':
