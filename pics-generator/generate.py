@@ -28,10 +28,10 @@ with open(temp_json) as file:
 for picture in first_layer:
     for layer in all_pictures[1]["images"]:
         image = Image.open(path + picture)
-        next_layer = Image.open(path + layer)
+        next_layer = Image.open(path + layer).convert('RGBA')
         image.paste(next_layer, (0, 0), next_layer)
         image.save(temp_path + picture[:-4] + layer)
-        pictures.append(temp_path + picture[:-4] + layer)
+        pictures.append(picture[:-4] + layer)
         picture_name = picture[:-4] + layer
         picture_info = {"name": picture_name, "images": [picture, layer]}
         result_json.append(picture_info)
@@ -52,14 +52,14 @@ for iteration in range(2, ITERATIONS):
             result_json[n]["name"] = picture[9:-4] + layer
             result_json[n]["images"].append(layer)
             n += 1
-            image = Image.open(picture)
-            next_layer = Image.open(path + layer)
+            image = Image.open(temp_path + picture)
+            next_layer = Image.open(path + layer).convert('RGBA')
             image.paste(next_layer, (0, 0), next_layer)
             if iteration <  ITERATIONS - 1:
-                image.save(picture[:-4] + layer)
-                temp_pictures.append(temp_path + picture[:-4] + layer)
+                image.save(temp_path + picture[:-4] + layer)
+                temp_pictures.append(picture[:-4] + layer)
             else: 
-                image.save(result_path + picture[9:-4] + layer)
+                image.save(result_path + picture[:-4] + layer)
     if iteration <  ITERATIONS - 1:
         with open(temp_json, 'w') as file:
             json.dump(temp_pictures, file, indent=4)
