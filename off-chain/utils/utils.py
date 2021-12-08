@@ -15,8 +15,8 @@ GIVER_ADDRESS = '0:b5e9240fc2d2f1ff8cbb1d1dee7fb7cae155e5f6320e585fcc685698994a1
 
 client = TonClient(
     config=ClientConfig(
-        network=NetworkConfig(server_address='https://net.ton.dev'),
-        # network=NetworkConfig(server_address='http://localhost'),
+        # network=NetworkConfig(server_address='https://net.ton.dev'),
+        network=NetworkConfig(server_address='http://localhost'),
     ),
     is_async=True,
 )

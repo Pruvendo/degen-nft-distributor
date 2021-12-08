@@ -27,7 +27,6 @@ async def main():
         await token_owner_contract_1.address(),
         10 ** 10,
         os.path.join(os.path.dirname(__file__), '../artifacts'),
-        file_name='devnet',
     )
 
     # deploy

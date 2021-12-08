@@ -49,7 +49,6 @@ async def main():
         await art_root_contract.address(),
         10 ** 10,
         os.path.join(os.path.dirname(__file__), '../artifacts'),
-        'devnet',
     )
 
     # deploy

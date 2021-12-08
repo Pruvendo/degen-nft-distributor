@@ -4,11 +4,15 @@
       "images": ["back1.png", "back2.png", "back3.png", "back4.png", "back5.png"]
     },
     {
-        "layers_name": "sign",
-        "images": ["sign1.png", "sign2.png", "sign3.png", "sign4.png"]
+        "layers_name": "frog",
+        "images": ["frog1.png", "frog2.png", "frog3.png"]
     },
     {
-      "layers_name": "front",
-      "images": ["front1.png", "front2.png", "front3.png", "front4.png", "front5.png"]
+      "layers_name": "glasses",
+      "images": ["glasses1.png", "glasses2.png"]
+    },
+    {
+      "layers_name": "phrase",
+      "images": ["phrase1.png", "phrase2.png", "phrase3.png"]
     }
 ]
