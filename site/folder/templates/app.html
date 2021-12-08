@@ -1,0 +1,33 @@
+<html>
+<title>Buy NFT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<body overflow="scroll">
+
+    <div class="w3-container w3-teal">
+        <h1>Buy our tokens with debot 0:....000</h1>
+      </div>
+
+    <div class="w3-row-padding">
+        <ul id="pictures">
+            {% for picture in pictures %}
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-card-4" style="width:90%">
+                    <div class="w3-container">
+                        <img src={{ picture.name }} alt="Picture" style="width:100%">
+                    </div>
+                    <footer class="w3-container w3-teal">
+                        <h5>Sold: {{picture.sold}}</h5>
+                        Unique identifier: {{picture.unique_vector}};
+                        Cost: {{picture.cost}} ton;
+                    </footer>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
