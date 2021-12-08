@@ -143,10 +143,25 @@
 			"outputs": [
 				{"name":"code","type":"cell"}
 			]
+		},
+		{
+			"name": "dataHash",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"dataHash","type":"uint256"}
+			]
+		},
+		{
+			"name": "traitsConfig",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"traitsConfig","type":"uint256[]"}
+			]
 		}
 	],
 	"data": [
-		{"key":1,"name":"dataHash","type":"uint256"}
 	],
 	"events": [
 		{

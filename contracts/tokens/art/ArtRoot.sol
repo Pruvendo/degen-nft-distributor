@@ -8,15 +8,13 @@ import "ArtToken.sol";
 import "interfaces/IArtRoot.sol";
 
 contract ArtRoot is Root, RootManaged, RootManagedCreationFee, RootManagedWithdraw, IArtRoot {
-    /**********
-    * STATIC *
-    **********/
+
     /**
      * dataHash ....... Hash of zip archive generative NFT based on
      * traitsConfig ... Number of options for each particular trait
      */
-    uint256 static dataHash;
-    uint[] traitsConfig;
+    uint256 public dataHash;
+    uint[] public traitsConfig;
 
 
 
